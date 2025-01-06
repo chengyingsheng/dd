@@ -1,20 +1,63 @@
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>初始化表格示例</title>
+    <!-- 引入jQuery库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* 可选：自定义表格样式 */
+        table {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
 <body>
 <!--table 创建了一个表格 -->
-<table border="10" width="400px" height="300px">
-    <!-- tr 创建了一行 -->
-    <tr>
-        <!-- th表示表头的一个单元格 -->
-        <th>序号</th>
-        <th>名称</th>
-        <th>备注</th>
-    </tr>
-    <tr>
-        <!-- td表示一个单元格 -->
-        <td>1</td>
-        <td><a href="study/st1.html">讲解代数式（一）上</a></td>
-        <td></td>
-    </tr>
-</table>
+<div class="container">
+    <h2 class="text-center">用户信息表格</h2>
+    <table class="table table-bordered" id="userTable">
+        <!-- tr 创建了一行 -->
+        <tr>
+            <!-- th表示表头的一个单元格 -->
+            <th>序号</th>
+            <th>名称</th>
+            <th>备注</th>
+        </tr>
+<!--        <tr>-->
+<!--            &lt;!&ndash; td表示一个单元格 &ndash;&gt;-->
+<!--            <td>1</td>-->
+<!--            <td><a href="study/st1.html">讲解代数式（一）上</a></td>-->
+<!--            <td></td>-->
+<!--        </tr>-->
+    </table>
+</div>
+<script>
+    $(document).ready(function() {
+        var jsonData = [
+            { "id": "st1", "name": "讲解代数式（一）上",   },
+            { "id": "st2", "name": "讲解代数式（一）上",   },
+            // 更多数据...
+        ];
+
+        $.each(jsonData, function(index, item) {
+            var row = $('<tr></tr>');
+            // 添加名称并包裹在 <a> 标签中
+            var link = $('<a></a>').attr('href', 'study/' + item.id + '.html').text(item.name);
+            row.append($('<td></td>').text(index+1));
+            row.append($('<td></td>').append(link));
+            $('#userTable tbody').append(row);
+        });
+    });
+</script>
 </body>
 </html>
