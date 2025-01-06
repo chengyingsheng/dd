@@ -100,7 +100,7 @@
         $.each(jsonData, function(index, item) {
             var row = $('<tr></tr>');
             // 添加名称并包裹在 <a> 标签中
-            var link = $('<a></a>').attr('href', 'study/sttp.html?id='+item.asset_id+'').text(item.title);
+            var link = $('<a></a>').attr('href', '/dd/study/sttp.html?id='+item.asset_id+'').text(item.title);
             row.append($('<td></td>').text(index+1));
             row.append($('<td></td>').append(link));
             $('#userTable tbody').append(row);
