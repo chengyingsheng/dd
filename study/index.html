@@ -39,50 +39,50 @@
         var jsonData = [
             {
                 "title": "有理数比较大小",
-                "asset_id": "636bcc9fa3fb0f63ef241e56267e0ab8"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=5b81f7f9-845e-47f2-b8ea-6f95feee3d59_2023-07-28.mp4"
             },
             {
                 "title": "有理数凑整巧算",
-                "asset_id": "a3feed880dbb4d6691f6cb969fca3e7c"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=07071ad3-f5c8-49fa-b238-5f34b354bca8_2023-07-28.mp4"
             },
             {
                 "title": "有理数的乘法",
-                "asset_id": "db9fe6ae87bb679f1aeb13182608f5c6"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=830f073b-e61a-4792-96b7-d746270a636a_2023-07-28.mp4"
             },
             {
                 "title": "有理数的乘方",
-                "asset_id": "7ed95603bfeef1746374287ea2197d75"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=b408ae37-4af9-4302-881a-1b4e2afdac33_2023-07-28.mp4"
             },
             {
                 "title": "有理数的分类",
-                "asset_id": "92503d3ddb6c53d5a9b00fa51291741e"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=84db11ee-474e-48b5-bf1e-3086e29a4b2c_2023-07-28.mp4"
             },
             {
                 "title": "有理数的概念",
-                "asset_id": "76a726544d42b740eb0e96077a54ff0d"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=87a271ac-029c-4743-8c6e-53fbc2ba6c33_2023-07-28.mp4"
             },
             {
                 "title": "有理数的混合运算",
-                "asset_id": "97f57ffcde3061b8f562dc2b4db08fc1"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=81be1a3c-212a-477b-b225-7ad56778b884_2023-07-28.mp4"
             },
             {
                 "title": "有理数的加法",
-                "asset_id": "b6a2a05caa7a13088b28ee27a4e06cd2"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=485bd828-4b02-41c0-b94a-f7dffec79902_2023-07-28.mp4"
             },
             {
                 "title": "有理数的四则混合运算",
-                "asset_id": "f3302bd1b8e860f4aafba3558fdd4610"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=3fa41485-5b31-4f42-adad-76d8c6ece7c9_2023-07-28.mp4"
             },
             {
                 "title": "有理数乘除法中的符号问题",
-                "asset_id": "576815f8c19df33b1523acd248517136"
+                "video_url": "https://en.zhiliao360.com/manage/common/download?fileName=pad/video/11434e9d-4db6-434a-867c-637ee033d4da.mp4"
             }
         ];
 
         $.each(jsonData, function(index, item) {
             var row = $('<tr></tr>');
             // 添加名称并包裹在 <a> 标签中
-            var link = $('<a></a>').attr('href', '/dd/study/sttp.html?id='+item.asset_id+'').text(item.title);
+            var link = $('<a></a>').attr('href', ''+item.video_url+'').text(item.title);
             row.append($('<td></td>').text(index+1));
             row.append($('<td></td>').append(link));
             $('#userTable tbody').append(row);
