@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!--<h2>Hello World!</h2>-->
+<script src="/dd/resource/hls.min.js"></script>
+<script src="/dd/resource/flv.min.js"></script>
+<script src="/dd/resource/dash.all.min.js"></script>
+<script src="/dd/resource/webtorrent.min.js"></script>
+<script src="/dd/resource/DPlayer.min.js"></script>
+<!--<link rel="stylesheet" href="/resource/DPlayer.min.css">-->
+<div id="dplayer"></div>
+<script>
+    // 获取查询字符串
+    var queryString = window.location.search;
+
+    // 创建 URLSearchParams 对象
+    var urlParams = new URLSearchParams(queryString);
+
+    // 获取特定参数的值
+    var id = urlParams.get('id');
+
+    console.log('id:', id);
+
+
+    new DPlayer({
+        container: document.getElementById('dplayer'),
+        video: {
+            url: "https://vip.ffzy-play8.com/20221107/356_b6fd548a/2000k/hls/mixed.m3u8",
+            type: 'hls'
+        },
+        hlsjsConfig: {
+            p2pConfig: {
+                logLevel: true,
+                live: false,
+            }
+        },
+    });
+</script>
+</body>
+</html>
